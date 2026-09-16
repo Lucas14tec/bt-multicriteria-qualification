@@ -16,16 +16,27 @@ Arquivos gerados:
 - `resultados_sinteticos.csv`: métricas, valores normalizados, posições e scores das 12 BTs nos três contextos;
 - `sensibilidade_pesos_sinteticos.csv`: distribuição das vitórias observadas na análise de sensibilidade.
 
-## Valores de referência
+Os vencedores esperados com os pesos-base são Drone Crítico (Tempo Real), Sistema Médico (Equipe Iniciante) e Configurável (Ambiente Dinâmico).
 
-Os seguintes vencedores devem ser reproduzidos com os pesos-base:
+## Experimento Nav2
 
-| Contexto | BT vencedora | Score |
-|---|---|---:|
-| Tempo Real | BT Drone Crítico | 0.811 |
-| Equipe Iniciante | BT Sistema Médico | 0.877 |
-| Ambiente Dinâmico | BT Configurável | 0.838 |
+Execute:
 
-Na análise de sensibilidade são avaliadas 1.615 configurações por contexto. As estabilidades esperadas dos vencedores-base são 91.3%, 100.0% e 100.0%, respectivamente.
+```bash
+python src/extrator_nav2_metricas.py
+```
 
-A documentação técnica completa deste experimento está em [`docs/experimento_sintetico.md`](../docs/experimento_sintetico.md).
+O resultado consolidado é gravado em:
+
+```text
+results/nav2/resultados_nav2.csv
+```
+
+Esse arquivo contém os atributos estruturais, proxies `S`, `R`, `M`, `L`, valores de `f3`, informações de parametrização e adaptabilidade `f2` das cinco BTs reais analisadas.
+
+O experimento Nav2 não produz um score multicritério final porque o critério de desempenho `f1` não foi medido em cenários comparáveis.
+
+## Documentação técnica
+
+- [`docs/experimento_sintetico.md`](../docs/experimento_sintetico.md)
+- [`docs/experimento_nav2.md`](../docs/experimento_nav2.md)
