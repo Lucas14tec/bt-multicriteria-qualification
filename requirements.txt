@@ -1,2 +1,2 @@
-# Experimento 1 não possui dependências externas.
+# Os dois experimentos usam apenas a biblioteca padrão do Python.
 # Requer Python >= 3.10.
