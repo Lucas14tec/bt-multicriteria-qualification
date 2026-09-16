@@ -54,6 +54,10 @@ TIPOS_CONDICAO_COMPOSTA = {
     "RoundRobin",
 }
 
+# Conjunto operacional usado para identificar raízes de módulos candidatos e
+# estruturas de controle relevantes para a análise. O nome TIPOS_CONTROLE é mantido
+# por compatibilidade com a versão utilizada na qualificação; além de nós de controle,
+# o conjunto inclui os decoradores RateController e Inverter.
 TIPOS_CONTROLE = {
     "Sequence",
     "Fallback",
@@ -71,7 +75,7 @@ TAGS_ESTRUTURA_XML = {"root", "BehaviorTree"}
 PESOS_EXPLICABILIDADE = {
     "Tempo Real": {"S": 0.40, "R": 0.10, "M": 0.20, "L": 0.30},
     "Equipe Iniciante": {"S": 0.20, "R": 0.30, "M": 0.30, "L": 0.20},
-    "Ambiente Dinamico": {"S": 0.20, "R": 0.20, "M": 0.40, "L": 0.20},
+    "Ambiente Dinâmico": {"S": 0.20, "R": 0.20, "M": 0.40, "L": 0.20},
 }
 
 
@@ -113,8 +117,10 @@ def calcular_modularidade(elemento: ET.Element) -> tuple[int, int, float]:
     """
     Calcula M = módulos reutilizáveis / módulos totais.
 
-    Cada nó pertencente a TIPOS_CONTROLE define um módulo candidato. Um módulo é
-    considerado reutilizável quando sua assinatura estrutural ocorre mais de uma vez.
+    Cada nó pertencente ao conjunto operacional TIPOS_CONTROLE define um módulo
+    candidato. Esse conjunto inclui nós de controle e os decoradores RateController
+    e Inverter. Um módulo é considerado reutilizável quando sua assinatura estrutural
+    ocorre mais de uma vez.
     """
     assinaturas = [
         assinatura_subarvore(no)
@@ -183,7 +189,7 @@ def contar_subtrees(elemento: ET.Element) -> int:
 
 
 def contar_nos_controle(elemento: ET.Element) -> int:
-    """Conta nós pertencentes ao conjunto TIPOS_CONTROLE."""
+    """Conta ocorrências do conjunto operacional TIPOS_CONTROLE usado na análise."""
     return sum(1 for no in elemento.iter() if no.tag in TIPOS_CONTROLE)
 
 
@@ -335,7 +341,7 @@ def analisar_bt(
         "clareza_logica": clareza_logica,
         "explicabilidade_tempo_real": explicabilidades["Tempo Real"],
         "explicabilidade_equipe_iniciante": explicabilidades["Equipe Iniciante"],
-        "explicabilidade_ambiente_dinamico": explicabilidades["Ambiente Dinamico"],
+        "explicabilidade_ambiente_dinamico": explicabilidades["Ambiente Dinâmico"],
         "modulos_totais": modulos_totais,
         "modulos_reutilizaveis": modulos_reutilizaveis,
         "modularidade": modularidade,
