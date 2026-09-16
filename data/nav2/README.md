@@ -12,6 +12,8 @@ Esta pasta contém as entradas utilizadas para reproduzir o experimento com Beha
 
 Esses arquivos foram obtidos do repositório oficial `ros-navigation/navigation2`, no diretório `nav2_bt_navigator/behavior_trees/`.
 
+O commit ou tag exato da coleta original não foi registrado durante o experimento. Por esse motivo, o repositório preserva as cópias exatas dos XMLs efetivamente utilizados e não atribui retroativamente um SHA de origem.
+
 ## `nav2_tree_nodes.xml`
 
 O experimento original utilizou o arquivo oficial completo `nav2_tree_nodes.xml` para obter as portas de entrada disponíveis de cada tipo de nó.
