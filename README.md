@@ -17,14 +17,17 @@ bt-multicriteria-qualification/
 │   └── nav2/
 │       └── README.md
 ├── results/
-│   └── README.md
+│   ├── README.md
+│   ├── resultados_sinteticos.csv
+│   └── sensibilidade_pesos_sinteticos.csv
 └── docs/
-    └── README.md
+    ├── README.md
+    └── experimento_sintetico.md
 ```
 
 ## Experimento 1 — BTs sintéticas + WSM
 
-Arquivo:
+Arquivo principal:
 
 ```text
 src/experimento_sintetico_wsm.py
@@ -46,6 +49,14 @@ O script:
 ### Observação importante
 
 Os atributos das 12 BTs deste experimento são **dados sintéticos controlados de prova de conceito**. Eles não representam medições coletadas de sistemas reais.
+
+## Rastreabilidade entre texto, código e resultados
+
+A documentação técnica detalhada está em:
+
+- [`docs/experimento_sintetico.md`](docs/experimento_sintetico.md)
+
+Esse documento mostra a correspondência entre cada elemento do modelo (`f1`, `f2`, `S`, `R`, `M`, `L`, `f3`, normalização, WSM e sensibilidade), as funções implementadas no código e os resultados esperados.
 
 ## Contextos avaliados
 
@@ -74,7 +85,7 @@ results/resultados_sinteticos.csv
 results/sensibilidade_pesos_sinteticos.csv
 ```
 
-## Resultados esperados — vencedores com os pesos de referência
+## Resultados esperados — pesos de referência
 
 | Contexto | BT vencedora | Score |
 |---|---|---:|
@@ -82,8 +93,18 @@ results/sensibilidade_pesos_sinteticos.csv
 | Equipe Iniciante | BT Sistema Médico | 0.877 |
 | Ambiente Dinâmico | BT Configurável | 0.838 |
 
-Na análise de sensibilidade são avaliadas 1.615 configurações de pesos por contexto.
+Na análise de sensibilidade são avaliadas **1.615 configurações de pesos por contexto**.
+
+## Status do repositório
+
+- [x] Experimento sintético com WSM
+- [x] Análise de sensibilidade dos pesos
+- [x] Resultados reproduzíveis do experimento sintético
+- [x] Documentação de rastreabilidade do Experimento 1
+- [ ] Código do experimento com BTs reais do Nav2
+- [ ] XMLs e arquivo de definição de nós utilizados no Nav2
+- [ ] Documentação de rastreabilidade do experimento Nav2
 
 ## Próximas adições
 
-Os próximos códigos e dados da qualificação serão incorporados mantendo esta organização. Em particular, a pasta `data/nav2/` está reservada para os artefatos reais usados no experimento com Nav2 e a pasta `src/` receberá o respectivo extrator/analisador.
+Os próximos códigos e dados da qualificação serão incorporados mantendo esta organização. A pasta `data/nav2/` está reservada para os artefatos reais usados no experimento com Nav2 e a pasta `src/` receberá o respectivo extrator/analisador.
