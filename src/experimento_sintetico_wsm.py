@@ -232,7 +232,7 @@ BTS = [
 PESOS_EXPLICABILIDADE = {
     "Tempo Real": {"S": 0.40, "R": 0.10, "M": 0.20, "L": 0.30},
     "Equipe Iniciante": {"S": 0.20, "R": 0.30, "M": 0.30, "L": 0.20},
-    "Ambiente Dinamico": {"S": 0.20, "R": 0.20, "M": 0.40, "L": 0.20},
+    "Ambiente Dinâmico": {"S": 0.20, "R": 0.20, "M": 0.40, "L": 0.20},
 }
 
 CONTEXTOS = {
@@ -246,7 +246,7 @@ CONTEXTOS = {
         "adaptabilidade": 0.20,
         "explicabilidade": 0.70,
     },
-    "Ambiente Dinamico": {
+    "Ambiente Dinâmico": {
         "desempenho": 0.10,
         "adaptabilidade": 0.70,
         "explicabilidade": 0.20,
