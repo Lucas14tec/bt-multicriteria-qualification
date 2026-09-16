@@ -81,6 +81,10 @@ results/nav2/resultados_nav2.csv
 
 O arquivo `data/nav2/nav2_tree_nodes.xml` deste repositório é um **subconjunto de reprodução** derivado do arquivo oficial do Nav2 usado no experimento. Ele preserva apenas os IDs de nós e nomes das `input_port` necessários às cinco árvores analisadas. A execução com esse subconjunto foi comparada à execução com o arquivo oficial completo e produziu resultados numericamente idênticos.
 
+### Proveniência dos artefatos Nav2
+
+Os XMLs analisados foram obtidos do repositório oficial `ros-navigation/navigation2`, no diretório `nav2_bt_navigator/behavior_trees/`. O commit ou tag exato da coleta original não foi registrado durante o experimento. Por isso, este repositório preserva as cópias exatas dos arquivos efetivamente utilizados e **não atribui retroativamente um SHA de origem**.
+
 ## Rastreabilidade entre texto, código e resultados
 
 A documentação técnica está em:
