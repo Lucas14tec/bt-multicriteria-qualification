@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root BTCPP_format="4">
+  <!-- Reproduction subset derived from the official Nav2 nav2_tree_nodes.xml. Only node IDs and input_port names required by the five BTs are retained. This is sufficient for the static adaptability extraction used in the qualification. -->
+  <TreeNodesModel>
+    <Action ID="BackUp">
+      <input_port name="backup_dist" />
+      <input_port name="backup_speed" />
+      <input_port name="time_allowance" />
+      <input_port name="disable_collision_checks" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="ClearEntireCostmap">
+      <input_port name="service_name" />
+      <input_port name="server_timeout" />
+      <input_port name="plugins" />
+    </Action>
+    <Action ID="ComputePathToPose">
+      <input_port name="start" />
+      <input_port name="use_start" />
+      <input_port name="goal" />
+      <input_port name="viapoints" />
+      <input_port name="planner_id" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="ComputePathThroughPoses">
+      <input_port name="start" />
+      <input_port name="goals" />
+      <input_port name="planner_id" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="ComputeRoute">
+      <input_port name="start" />
+      <input_port name="goal" />
+      <input_port name="start_id" />
+      <input_port name="goal_id" />
+      <input_port name="use_start" />
+      <input_port name="use_poses" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="RemovePassedGoals">
+      <input_port name="radius" />
+      <input_port name="robot_base_frame" />
+      <input_port name="input_goals" />
+      <input_port name="input_waypoint_statuses" />
+    </Action>
+    <Action ID="SmoothPath">
+      <input_port name="unsmoothed_path" />
+      <input_port name="max_smoothing_duration" />
+      <input_port name="check_for_collisions" />
+      <input_port name="smoother_id" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="FollowPath">
+      <input_port name="path" />
+      <input_port name="controller_id" />
+      <input_port name="goal_checker_id" />
+      <input_port name="progress_checker_id" />
+      <input_port name="path_handler_id" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="TruncatePath">
+      <input_port name="input_path" />
+      <input_port name="distance" />
+    </Action>
+    <Action ID="TruncatePathLocal">
+      <input_port name="input_path" />
+      <input_port name="distance_forward" />
+      <input_port name="distance_backward" />
+      <input_port name="robot_base_frame" />
+      <input_port name="transform_tolerance" />
+      <input_port name="pose" />
+      <input_port name="angular_distance_weight" />
+      <input_port name="max_robot_pose_search_dist" />
+    </Action>
+    <Action ID="PlannerSelector">
+      <input_port name="topic_name" />
+      <input_port name="default_planner" />
+    </Action>
+    <Action ID="ControllerSelector">
+      <input_port name="topic_name" />
+      <input_port name="default_controller" />
+    </Action>
+    <Action ID="GoalCheckerSelector">
+      <input_port name="topic_name" />
+      <input_port name="default_goal_checker" />
+    </Action>
+    <Action ID="ProgressCheckerSelector">
+      <input_port name="topic_name" />
+      <input_port name="default_progress_checker" />
+    </Action>
+    <Action ID="PathHandlerSelector">
+      <input_port name="topic_name" />
+      <input_port name="default_path_handler" />
+    </Action>
+    <Action ID="Spin">
+      <input_port name="spin_dist" />
+      <input_port name="time_allowance" />
+      <input_port name="is_recovery" />
+      <input_port name="disable_collision_checks" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="Wait">
+      <input_port name="wait_duration" />
+      <input_port name="server_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Action ID="GetPoseFromPath">
+      <input_port name="path" />
+      <input_port name="index" />
+    </Action>
+    <Action ID="GetCurrentPose">
+      <input_port name="robot_base_frame" />
+      <input_port name="global_frame" />
+    </Action>
+    <Action ID="ConcatenatePaths">
+      <input_port name="input_path1" />
+      <input_port name="input_path2" />
+    </Action>
+    <Action ID="ValidatePath">
+      <input_port name="path" />
+      <input_port name="max_cost" />
+      <input_port name="consider_unknown_as_obstacle" />
+      <input_port name="layer_name" />
+      <input_port name="footprint" />
+      <input_port name="stop_at_first_collision" />
+      <input_port name="max_lookahead_distance" />
+      <input_port name="service_name" />
+      <input_port name="server_timeout" />
+    </Action>
+    <Condition ID="GoalUpdated">
+      <input_port name="goal" />
+      <input_port name="goals" />
+    </Condition>
+    <Condition ID="GlobalUpdatedGoal">
+      <input_port name="goal" />
+      <input_port name="goals" />
+    </Condition>
+    <Condition ID="WouldAControllerRecoveryHelp">
+      <input_port name="error_code" />
+      <input_port name="error_codes_to_check" />
+    </Condition>
+    <Condition ID="WouldAPlannerRecoveryHelp">
+      <input_port name="error_code" />
+      <input_port name="error_codes_to_check" />
+    </Condition>
+    <Condition ID="WouldARouteRecoveryHelp">
+      <input_port name="error_code" />
+      <input_port name="error_codes_to_check" />
+    </Condition>
+    <Condition ID="ArePosesNear">
+      <input_port name="ref_pose" />
+      <input_port name="target_pose" />
+      <input_port name="global_frame" />
+      <input_port name="tolerance" />
+    </Condition>
+    <Condition ID="IsGoalNearby">
+      <input_port name="path" />
+      <input_port name="proximity_threshold" />
+      <input_port name="max_robot_pose_search_dist" />
+      <input_port name="global_frame" />
+      <input_port name="robot_base_frame" />
+    </Condition>
+    <Condition ID="IsWithinPathTrackingBounds">
+      <input_port name="max_error_left" />
+      <input_port name="max_error_right" />
+      <input_port name="max_error_heading" />
+      <input_port name="tracking_feedback" />
+    </Condition>
+    <Control ID="PipelineSequence" />
+    <Control ID="RecoveryNode">
+      <input_port name="number_of_retries" />
+    </Control>
+    <Control ID="RoundRobin">
+      <input_port name="wrap_around" />
+    </Control>
+    <Decorator ID="RateController">
+      <input_port name="hz" />
+    </Decorator>
+    <Decorator ID="GoalUpdater">
+      <input_port name="input_goal" />
+      <input_port name="input_goals" />
+    </Decorator>
+  </TreeNodesModel>
+</root>
