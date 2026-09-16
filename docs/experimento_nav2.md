@@ -24,6 +24,8 @@ As cinco Behavior Trees analisadas estão em `data/nav2/`:
 
 Os XMLs foram obtidos do repositório oficial `ros-navigation/navigation2`, no diretório `nav2_bt_navigator/behavior_trees/`.
 
+O commit ou tag exato da coleta original não foi registrado durante o experimento. Por esse motivo, este repositório preserva as cópias exatas dos XMLs efetivamente analisados e não atribui retroativamente um SHA de origem.
+
 ### Modelo de portas dos nós
 
 O arquivo `data/nav2/nav2_tree_nodes.xml` incluído neste repositório é um **subconjunto de reprodução** derivado do arquivo oficial `nav2_tree_nodes.xml` usado durante o experimento. Ele mantém os IDs dos nós e os nomes das `input_port` necessários às cinco BTs analisadas. Campos não utilizados pelo extrator, como descrições, tipos, portas de saída e definições de nós que não aparecem no conjunto experimental, foram removidos para manter o repositório compacto.
@@ -67,7 +69,7 @@ No código e no texto de qualificação, o termo `caminhos_decisao` representa o
 
 ### Modularidade
 
-Cada subárvore enraizada em um nó de controle gera uma assinatura estrutural baseada na tag do nó e nas assinaturas de seus descendentes. Atributos XML são ignorados. Assinaturas repetidas são contabilizadas como módulos reutilizáveis:
+Cada subárvore enraizada em um elemento pertencente ao conjunto operacional `TIPOS_CONTROLE` gera uma assinatura estrutural baseada na tag do nó e nas assinaturas de seus descendentes. Apesar do nome mantido por compatibilidade com a versão da qualificação, esse conjunto inclui nós de controle e também os decoradores `RateController` e `Inverter`. Atributos XML são ignorados. Assinaturas repetidas são contabilizadas como módulos reutilizáveis:
 
 ```text
 M = modulos_reutilizaveis / modulos_totais
