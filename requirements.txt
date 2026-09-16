@@ -1,0 +1,2 @@
+# Experimento 1 não possui dependências externas.
+# Requer Python >= 3.10.
