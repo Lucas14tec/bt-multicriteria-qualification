@@ -17,5 +17,4 @@ resultados apresentados na qualificação
 ## Documentos disponíveis
 
 - [`experimento_sintetico.md`](experimento_sintetico.md): descrição do experimento sintético, fórmulas, correspondência entre métricas e funções, pesos, normalização, WSM, sensibilidade e resultados esperados.
-
-A documentação do experimento com BTs reais do Nav2 será adicionada nesta mesma pasta quando o respectivo código e os dados de entrada forem incorporados ao repositório.
+- [`experimento_nav2.md`](experimento_nav2.md): descrição do experimento com cinco Behavior Trees reais do Nav2, entradas utilizadas, regras de extração, correspondência entre métricas e funções e resultados de referência.
